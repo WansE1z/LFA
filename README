@@ -1,0 +1,47 @@
+Tema 1 LFA
+Copyright Ionita Radu-Alexandru 332CA
+
+Tema consta in implementarea, intr-un limbaj de programare (c++), a unui
+interpretor pentru limbajul Glypho.
+
+Interpretorul va citi fiecare intrustiune in acest limbaj, o va procesa
+si va afisa rezultatul conform checker-ului.
+
+Citesc fiecare caracter pe rand, formand un vector de instructiuni care
+contine toti operatorii de vor fi executati mai tarziu. Verific erorile
+de sintaxa si de parantezare, dupa care parcurg vectorul de instructiuni
+si execut fiecare operator.
+
+Functia operatorsExecute se ocupa de executarea lor, astfel fiecare instructiune
+intrand in switch, ducandu-se pe ramura corespunzatoare. Fiecare operator
+are caracteristicile lui:
+• 0000 ..... NOP(n) - operatia nula
+• 0001 ..... Input(i) - citeste un numar de la intrarea standard si il va pune 
+in varful stivei 
+• 0010 ..... Rot(>) - scoate un element din varful stivei si il va pune la coada 
+• 0011 ..... Swap(\) - interschimba elementele din varful stivei 
+• 0012 ..... Push(1) - va pune in varful stivei un nou element cu valoarea 1 
+• 0100 ..... RRot(<) - scoate un element de la coada stivei si il va pune in varf 
+• 0101 ..... Dup(d) - duplica elementul din varful stivei 
+• 0102 ..... Add(+) - scoate doua elemente din varful stivei, le calculeaza
+ suma si pune rezultatul in varful stivei 
+• 0110 ..... L-brace([) - va ignora codul pana la paranteza corespunzatoare, daca
+ elementul din varful stivei este 0 
+• 0111 ..... Output(o) - scoate elementul din varful stivei si il aﬁseaza la
+ iesirea standard 
+• 0112 ..... Multiply(*) - scoate doua elemente din varful stivei, le calculeaza
+ produsul si pune rezultatul in varful stivei 
+• 0120 ..... Execute(e) - scoate patru elemente din varful stivei si le 
+interpreteaza ca pe o instructiune 
+• 0121 ..... Negate(-) - scoate elementul din varful stivei si pune inapoi
+ inversul lui 
+• 0122 ..... Pop(!) - scoate un element din varful stivei 
+• 0123 ..... R-brace(]) - execut ,ia revine la elementul L-brace asociat
+
+Dupa ce se executa toti operatorii, se va afisa la output/error rezultatul final
+cerut de catre checker.
+
+O detaliere mai amanuntita am facut-o in comentarii, aici am facut un rezumat.
+
+
+
